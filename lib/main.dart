@@ -1509,6 +1509,17 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                       const SizedBox(height: 10),
+_PrimaryButton(
+  text: 'Geçmiş',
+  icon: Icons.history_rounded,
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => OutfitHistoryPage(store: store)),
+    );
+  },
+),
+                                      const SizedBox(height: 10),
                                       _PrimaryButton(
                                         text: 'Kombin Oluştur',
                                         icon: Icons.auto_awesome_rounded,
@@ -3361,7 +3372,15 @@ class _PrimaryButton extends StatelessWidget {
           children: [
             Icon(icon, size: 20, color: danger ? Colors.redAccent : const Color(0xFF00E5FF)),
             const SizedBox(width: 8),
-            Text(text, style: const TextStyle(fontWeight: FontWeight.w900)),
+            Flexible(
+  child: Text(
+    text,
+    maxLines: 1,
+    overflow: TextOverflow.ellipsis,
+    softWrap: false,
+    style: const TextStyle(fontWeight: FontWeight.w900),
+  ),
+),
           ],
         ),
       ),
