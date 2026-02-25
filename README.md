@@ -75,21 +75,45 @@ Outfit Studio is a practical “digital closet + outfit engine”:
 
 ## Screenshots
 
-| Screen | Preview |
-|---|---|
-| Onboarding | ![Onboarding](assets/screenshots/01-onboarding.png) |
-| Home | ![Home](assets/screenshots/02-home.png) |
-| Add Item | ![Add Item](assets/screenshots/03-add-item.png) |
-| Closet | ![Closet](assets/screenshots/04-closet.png) |
-| Planner | ![Planner](assets/screenshots/05-planner.png) |
-| History | ![History](assets/screenshots/06-history.png) |
-| History Detail | ![History Detail](assets/screenshots/07-history-detail.png) |
-| Favorites | ![Favorites](assets/screenshots/08-favorites.png) |
-| Stats | ![Stats](assets/screenshots/09-stats.png) |
+Add your screenshots under:
 
-> Tip (Android Emulator): Use the camera icon / screenshot tool from the emulator toolbar.
+```
+/assets/screenshots/
+```
 
----
+Recommended file names:
+- `01-onboarding.png`
+- `02-home.png`
+- `03-add-item.png`
+- `04-closet.png`
+- `05-planner.png`
+- `06-history.png`
+- `07-history-detail.png`
+- `08-favorites.png`
+- `09-stats.png`
+
+### Compact grid (smaller, side-by-side)
+
+> GitHub Markdown renders images huge by default. This grid uses HTML `<img>` with fixed width so it looks clean.
+
+<table>
+  <tr>
+    <td><b>Onboarding</b><br/><img src="assets/screenshots/01-onboarding.png" width="240"/></td>
+    <td><b>Home</b><br/><img src="assets/screenshots/02-home.png" width="240"/></td>
+    <td><b>Add Item</b><br/><img src="assets/screenshots/03-add-item.png" width="240"/></td>
+  </tr>
+  <tr>
+    <td><b>Closet</b><br/><img src="assets/screenshots/04-closet.png" width="240"/></td>
+    <td><b>Planner</b><br/><img src="assets/screenshots/05-planner.png" width="240"/></td>
+    <td><b>History</b><br/><img src="assets/screenshots/06-history.png" width="240"/></td>
+  </tr>
+  <tr>
+    <td><b>History Detail</b><br/><img src="assets/screenshots/07-history-detail.png" width="240"/></td>
+    <td><b>Favorites</b><br/><img src="assets/screenshots/08-favorites.png" width="240"/></td>
+    <td><b>Stats</b><br/><img src="assets/screenshots/09-stats.png" width="240"/></td>
+  </tr>
+</table>
+
 
 ## How It Works (User Guide)
 
@@ -355,19 +379,45 @@ Her kıyafet için:
 
 ## Ekran Görüntüleri
 
-| Ekran | Önizleme |
-|---|---|
-| Onboarding | ![Onboarding](assets/screenshots/01-onboarding.png) |
-| Ana Sayfa | ![Home](assets/screenshots/02-home.png) |
-| Kıyafet Ekle | ![Add Item](assets/screenshots/03-add-item.png) |
-| Dolabım | ![Closet](assets/screenshots/04-closet.png) |
-| Kombin Oluştur | ![Planner](assets/screenshots/05-planner.png) |
-| Geçmiş | ![History](assets/screenshots/06-history.png) |
-| Geçmiş Detayı | ![History Detail](assets/screenshots/07-history-detail.png) |
-| Favoriler | ![Favorites](assets/screenshots/08-favorites.png) |
-| İstatistik | ![Stats](assets/screenshots/09-stats.png) |
+Ekran görüntülerini şu dizine koy:
 
----
+```
+/assets/screenshots/
+```
+
+Önerilen dosya isimleri:
+- `01-onboarding.png`
+- `02-home.png`
+- `03-add-item.png`
+- `04-closet.png`
+- `05-planner.png`
+- `06-history.png`
+- `07-history-detail.png`
+- `08-favorites.png`
+- `09-stats.png`
+
+### Kompakt grid (küçük, yan yana)
+
+> GitHub’da Markdown görselleri çok büyük basıyor. Burada HTML `<img>` ile genişliği sabitledim; daha temiz durur.
+
+<table>
+  <tr>
+    <td><b>Onboarding</b><br/><img src="assets/screenshots/01-onboarding.png" width="240"/></td>
+    <td><b>Ana Sayfa</b><br/><img src="assets/screenshots/02-home.png" width="240"/></td>
+    <td><b>Kıyafet Ekle</b><br/><img src="assets/screenshots/03-add-item.png" width="240"/></td>
+  </tr>
+  <tr>
+    <td><b>Dolabım</b><br/><img src="assets/screenshots/04-closet.png" width="240"/></td>
+    <td><b>Kombin Oluştur</b><br/><img src="assets/screenshots/05-planner.png" width="240"/></td>
+    <td><b>Geçmiş</b><br/><img src="assets/screenshots/06-history.png" width="240"/></td>
+  </tr>
+  <tr>
+    <td><b>Geçmiş Detayı</b><br/><img src="assets/screenshots/07-history-detail.png" width="240"/></td>
+    <td><b>Favoriler</b><br/><img src="assets/screenshots/08-favorites.png" width="240"/></td>
+    <td><b>İstatistik</b><br/><img src="assets/screenshots/09-stats.png" width="240"/></td>
+  </tr>
+</table>
+
 
 ## Kullanım Rehberi
 
