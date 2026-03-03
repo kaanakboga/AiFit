@@ -1139,13 +1139,16 @@ class OutfitEngine {
     final rainingNow = (weather.now?.precipitationMm ?? 0) > 0.2;
 
     // Only clean clothes. Strict by occasion; fallback.
-    var pool = store.items
-        .where((it) => it.laundry == LaundryState.ready && it.supportsOccasion(desiredOcc) && it.supportsSeason(season))
-        .toList();
-    if (pool.isEmpty) {
-      pool = store.items.where((it) => it.laundry == LaundryState.ready && it.supportsSeason(season)).toList();
-    }
-    if (pool.isEmpty) return const [];
+    // Ignore laundry state. Strict by occasion; fallback.
+var pool = store.items
+    .where((it) => it.supportsOccasion(desiredOcc) && it.supportsSeason(season))
+    .toList();
+
+if (pool.isEmpty) {
+  pool = store.items.where((it) => it.supportsSeason(season)).toList();
+}
+
+if (pool.isEmpty) return const [];
 
     final tops = pool.where((e) => e.category == 'TOP').toList();
     final bottoms = pool.where((e) => e.category == 'BOTTOM').toList();
@@ -1718,14 +1721,7 @@ class _AddEditClothingPageState extends State<AddEditClothingPage> {
                     itemLabel: (x) => x,
                     onChanged: (v) => setState(() => _color = v),
                   ),
-                  const SizedBox(height: 10),
-                  _Dropdown<LaundryState>(
-                    label: 'Durum',
-                    value: _laundry,
-                    items: LaundryState.values,
-                    itemLabel: (x) => x.label,
-                    onChanged: (v) => setState(() => _laundry = v),
-                  ),
+
                   const SizedBox(height: 12),
                   TextField(
                     controller: _note,
@@ -1834,7 +1830,7 @@ class _AddEditClothingPageState extends State<AddEditClothingPage> {
                     category: _category,
                     color: _color,
                     note: _note.text,
-                    laundry: _laundry,
+                    laundry: LaundryState.ready,
                     warmths: _warmths.toList()..sort(),
                     occasions: _occasions.toList()..sort(),
                     seasons: _seasons.toList()..sort(),
@@ -1853,7 +1849,7 @@ class _AddEditClothingPageState extends State<AddEditClothingPage> {
                 category: _category,
                 color: _color,
                 note: _note.text,
-                laundry: _laundry,
+                laundry: LaundryState.ready,
                 createdAt: DateTime.now(),
                 warmths: _warmths.toList()..sort(),
                 occasions: _occasions.toList()..sort(),
@@ -1902,7 +1898,6 @@ class _ClosetPageState extends State<ClosetPage> {
   String? _cat;
   String? _color;
   Season? _season;
-  LaundryState? _laundry;
 
   @override
   Widget build(BuildContext context) {
@@ -1912,7 +1907,6 @@ class _ClosetPageState extends State<ClosetPage> {
         final items = widget.store.items.where((it) {
           if (_cat != null && it.category != _cat) return false;
           if (_color != null && it.color != _color) return false;
-          if (_laundry != null && it.laundry != _laundry) return false;
           if (_season != null && !it.supportsSeason(_season!)) return false;
           return true;
         }).toList();
@@ -1989,14 +1983,7 @@ class _ClosetPageState extends State<ClosetPage> {
                     itemLabel: (x) => x == null ? 'Hepsi' : x,
                     onChanged: (v) => setSheet(() => _color = v),
                   ),
-                  const SizedBox(height: 10),
-                  _Dropdown<LaundryState?>(
-                    label: 'Durum',
-                    value: _laundry,
-                    items: [null, ...LaundryState.values],
-                    itemLabel: (x) => x == null ? 'Hepsi' : x.label,
-                    onChanged: (v) => setSheet(() => _laundry = v),
-                  ),
+
                   const SizedBox(height: 10),
                   _Dropdown<Season?>(
                     label: 'Sezon',
@@ -2021,7 +2008,6 @@ class _ClosetPageState extends State<ClosetPage> {
                         _cat = null;
                         _color = null;
                         _season = null;
-                        _laundry = null;
                       });
                     },
                     child: const Text('Sıfırla'),
